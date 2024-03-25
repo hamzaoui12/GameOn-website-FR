@@ -15,6 +15,7 @@ const formData = document.querySelectorAll(".formData");
 const CloseBtn = document.querySelectorAll(".close");
 const SubmitBtn = document.getElementById("btn-submit");
 const form = document.querySelector(".modal-body");
+const confirmationBtn = document.querySelectorAll(".confirmation-btn");
 const modalFirst = document.getElementById("first");
 const modalLast = document.getElementById("last");
 const modalEmail = document.getElementById("email");
@@ -22,12 +23,16 @@ const modalBirthdate = document.getElementById("birthdate");
 const modalQuantity = document.getElementById("quantity");
 const modalCheckbox1 = document.getElementById("checkbox1");
 const modalLocation = document.getElementsByName("location");
+const modalBodyText = document.getElementById("modalBodyText");
+const confirmationMessage = document.getElementById("confirmation-Message");
 
 // Événement d'ouverture du modal lorsque le bouton est cliqué
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
 function launchModal() {
   modalbg.style.display = "block";
+  modalBodyText.style.display = "block";
+  confirmationMessage.style.display = "none";
 }
 
 // Événement de fermeture du modal lorsque le bouton de fermeture est cliqué
@@ -51,6 +56,14 @@ function resetFormFields() {
 
 // Fonction pour fermer le modal
 function closeModal() {
+  modalbg.style.display = "none";
+}
+// Fonction pour fermer le modal de confirmation
+confirmationBtn.forEach((btn) =>
+  btn.addEventListener("click", confirmationModal)
+);
+
+function confirmationModal() {
   modalbg.style.display = "none";
 }
 
@@ -186,6 +199,11 @@ modalCheckbox1.addEventListener("input", function () {
   document.querySelector(".errorCheckbox").innerHTML = "";
 });
 
+//function displaying a congratulation message
+function confirmation() {
+  modalBodyText.style.display = "none";
+  confirmationMessage.style.display = "block";
+}
 // Événement de soumission du formulaire
 document
   .getElementById("btn-submit")
@@ -195,6 +213,7 @@ document
     checkFieldsValidity();
 
     if (checkFormValidity()) {
+      confirmation();
       document.getElementById("reserve").reset();
     }
   });
