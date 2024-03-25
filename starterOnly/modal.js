@@ -96,7 +96,7 @@ function dateValidity() {
     return true;
   } else {
     document.querySelector(".errorBirthdate").innerHTML =
-      "Vous devez entrer une date de naissance valide.";
+      "Veuillez entrer une date de naissance valide.";
     return false;
   }
 }
@@ -130,7 +130,7 @@ function checkFieldsValidity() {
 
   if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(modalEmail.value)) {
     document.querySelector(".errorEmail").innerHTML =
-      "Veuillez entrer une adresse mail valide.";
+      "Veuillez entrer une adresse mail valide. Ex: game@on.com";
   } else {
     document.querySelector(".errorEmail").innerHTML = "";
   }
@@ -141,28 +141,28 @@ function checkFieldsValidity() {
     )
   ) {
     document.querySelector(".errorBirthdate").innerHTML =
-      "Vous devez entrer votre date de naissance.";
+      "Veuillez entrer une date de naissance valide.";
   } else {
     document.querySelector(".errorBirthdate").innerHTML = "";
   }
 
   if (!/^\d+$/.test(modalQuantity.value)) {
     document.querySelector(".errorQuantity").innerHTML =
-      "Vous devez choisir un nombre de tournoi auquel vous avez participé";
+      "Indiquez un nombre entre 0 et 99";
   } else {
     document.querySelector(".errorQuantity").innerHTML = "";
   }
 
   if (!checkOneRadioChecked(modalLocation)) {
     document.querySelector(".errorLocation").innerHTML =
-      "Vous devez choisir une option.";
+      "Choisissez une des options.";
   } else {
     document.querySelector(".errorLocation").innerHTML = "";
   }
 
   if (!modalCheckbox1.checked) {
     document.querySelector(".errorCheckbox").innerHTML =
-      "Vous devez vérifier que vous acceptez les termes et conditions.";
+      "Vérifiez que vous acceptez les conditions d'utilisation.";
   } else {
     document.querySelector(".errorCheckbox").innerHTML = "";
   }
