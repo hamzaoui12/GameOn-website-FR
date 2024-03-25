@@ -210,6 +210,10 @@ document
   .addEventListener("click", function (submit) {
     submit.preventDefault();
 
+    if (modalBirthdate.type !== "date") {
+      alert("C'est pas beau d'essayer de hacker notre site !");
+      return;
+    }
     checkFieldsValidity();
 
     if (checkFormValidity()) {
