@@ -118,6 +118,7 @@ function checkFieldsValidity() {
     document.querySelector(".errorFirst").innerHTML =
       "Veuillez entrer 2 caractères ou plus pour le champ du prénom.";
   } else {
+    modalFirst.value = modalFirst.value.replace(/[^a-zA-ZÀ-ÿ\-]/g, '');
     document.querySelector(".errorFirst").innerHTML = "";
   }
 
@@ -125,6 +126,7 @@ function checkFieldsValidity() {
     document.querySelector(".errorLast").innerHTML =
       "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
   } else {
+    modalLast.value = modalLast.value.replace(/[^a-zA-ZÀ-ÿ\-]/g, '');
     document.querySelector(".errorLast").innerHTML = "";
   }
 
