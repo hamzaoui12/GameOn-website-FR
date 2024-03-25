@@ -43,6 +43,13 @@
   width: 100%;
   overflow: auto;
   background-color: rgba(26, 39, 156, 0.4);
+  /* scrollbar */
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+
+.bground::-webkit-scrollbar {
+  display: none; 
 }
 
 .content {
